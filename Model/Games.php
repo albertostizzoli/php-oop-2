@@ -5,7 +5,7 @@ class Games
     private string $name;
     private string $image_icon_url;
 
-    private function __construct($title, $image)
+    public function __construct($title, $image)
     {
         $this->name = $title;
         $this->image_icon_url = $image;

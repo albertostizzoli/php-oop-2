@@ -9,7 +9,7 @@ class Book
     private string $longDescription;
     private string $authors;
 
-    private function __construct($id, $title, $pages, $image, $plot, $authors)
+    public function __construct($id, $title, $pages, $image, $plot, $authors)
     {
         $this->_id = $id;
         $this->title = $title;
