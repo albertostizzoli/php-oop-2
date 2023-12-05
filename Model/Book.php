@@ -7,7 +7,7 @@ class Book
     private int $pageCount;
     private string $thumbnailUrl;
     private string $longDescription;
-    private string $authors;
+    private array $authors;
 
     public function __construct($id, $title, $pages, $image, $plot, $authors)
     {
@@ -35,7 +35,7 @@ $bookList = json_decode($bookString, true);
 
 $books = [];
 foreach ($bookList as $item) {
-    $books[] = new Book($item['id'], $item['title'], $item['pageCount'], $item['thumbnailUrl'], $item['longDescription'], $item['authors']);
+    $books[] = new Book($item['_id'], $item['title'], $item['pageCount'], $item['thumbnailUrl'], $item['longDescription'], $item['authors']);
 }
 
 ?>

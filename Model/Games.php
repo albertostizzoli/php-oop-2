@@ -3,18 +3,18 @@
 class Games
 {
     private string $name;
-    private string $image_icon_url;
+    private string $img_icon_url;
 
     public function __construct($title, $image)
     {
         $this->name = $title;
-        $this->image_icon_url = $image;
+        $this->img_icon_url = $image;
     }
 
     private function printGame()
     {
         $title = $this->name;
-        $image = $this->image_icon_url;
+        $image = $this->img_icon_url;
         include __DIR__ . '/../Views/play.php';
     }
 }
@@ -24,6 +24,6 @@ $gameList = json_decode($gameString, true);
 
 $games = [];
 foreach ($gameList as $item) {
-    $games[] = new Games($item['name'], $item['image_icon_url']);
+    $games[] = new Games($item['name'], $item['img_icon_url']);
 }
 ?>
