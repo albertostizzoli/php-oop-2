@@ -1,6 +1,6 @@
 <?php
 
-class Books
+class Book
 {
     private int $_id;
     private string $title;
@@ -17,7 +17,6 @@ class Books
         $this->thumbnailUrl = $image;
         $this->longDescription = $plot;
         $this->authors = $authors;
-
     }
 
     public function printBook()
@@ -27,7 +26,7 @@ class Books
         $pages = $this->pageCount;
         $plot = substr($this->longDescription, 0, 100) . '...';
         $authors = $this->authors;
-        include __DIR__ . '/../Views/card.php';
+        include __DIR__ . '/../Views/read.php';
     }
 }
 
@@ -36,8 +35,7 @@ $bookList = json_decode($bookString, true);
 
 $books = [];
 foreach ($bookList as $item) {
-    $books[] = new Books($item['id'], $item['title'], $item['pageCount'], $item['thumbnaiUrl'], $item['longDescription'], $item['authors']);
+    $books[] = new Book($item['id'], $item['title'], $item['pageCount'], $item['thumbnailUrl'], $item['longDescription'], $item['authors']);
 }
-
 
 ?>
