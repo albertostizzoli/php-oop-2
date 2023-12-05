@@ -12,7 +12,7 @@
                 <?= $pages ?>
             </div>
             <div class="d-flex align-items-flex-start">
-                <?= $authors ?>
+            <?= implode(', ', $authors) ?>
             </div>
         </div>
     </div>
