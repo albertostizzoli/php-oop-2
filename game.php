@@ -5,8 +5,8 @@ include __DIR__ . '/Model/Games.php';
 ?>
 
 <section class="container">
-    <h2>Games</h2>
-    <div class="row">
+    <h2>GAMES</h2>
+    <div class="row gy-4">
         <?php
         foreach ($games as $game) {
             $game->printGame();

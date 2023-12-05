@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,19 +15,23 @@
 
 <body>
     <header>
-        <div class="container">
-            <h1>OOP - Shop</h1>
-            <div class="d-flex justify-content-between alig-items-center">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="movie.php">Movies</a>
-                            <a href="book.php">Books</a>
-                            <a href="game.php">Games</a>
+        <h1 class="text-center text-white text-bg-danger p-3">OOP - Shop</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="movie.php">MOVIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.php">BOOK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="game.php">GAMES</a>
                         </li>
                     </ul>
-                </nav>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
     <main>
