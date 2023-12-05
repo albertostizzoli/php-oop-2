@@ -4,7 +4,7 @@ include __DIR__ . '/Model/Book.php';
 
 ?>
 
-<section class="container">
+<section class="container mt-2">
     <h2>BOOKS</h2>
     <div class="row gy-4">
         <?php

@@ -4,7 +4,7 @@ include __DIR__ . '/Model/Movie.php';
 $movies = Movie::fetchAll();
 ?>
 
-<section class="container">
+<section class="container mt-2">
     <h2>MOVIES</h2>
     <div class="row gy-4">
         <?php

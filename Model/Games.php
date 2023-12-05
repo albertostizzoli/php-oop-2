@@ -1,11 +1,11 @@
 <?php
 
-class Games
+class Games 
 {
     private string $name;
     private string $img_icon_url;
 
-    public function __construct($title, $image)
+    public function __construct($title, $image,)
     {
         $this->name = $title;
         $this->img_icon_url = $image;
