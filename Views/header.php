@@ -17,6 +17,17 @@
     <header>
         <div class="container">
             <h1>OOP - Shop</h1>
+            <div class="d-flex justify-content-between alig-items-center">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="movie.php">Movies</a>
+                            <a href="book.php">Books</a>
+                            <a href="game.php">Games</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
     <main>

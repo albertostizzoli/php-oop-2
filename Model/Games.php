@@ -15,6 +15,7 @@ class Games
     {
         $title = $this->name;
         $image = $this->image_icon_url;
+        include __DIR__ . '/../Views/card.php';
     }
 }
 

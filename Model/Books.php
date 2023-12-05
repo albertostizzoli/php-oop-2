@@ -2,7 +2,7 @@
 
 class Books
 {
-    private int $id;
+    private int $_id;
     private string $title;
     private int $pageCount;
     private string $thumbnailUrl;
@@ -11,7 +11,7 @@ class Books
 
     private function __construct($id, $title, $pages, $image, $plot, $authors)
     {
-        $this->id = $id;
+        $this->_id = $id;
         $this->title = $title;
         $this->pageCount = $pages;
         $this->thumbnailUrl = $image;
@@ -25,8 +25,9 @@ class Books
         $image = $this->thumbnailUrl;
         $title = $this->title;
         $pages = $this->pageCount;
-        $plot = $this->longDescription;
-        $authors = $this->authors;  
+        $plot = substr($this->longDescription, 0, 100) . '...';
+        $authors = $this->authors;
+        include __DIR__ . '/../Views/card.php';
     }
 }
 
