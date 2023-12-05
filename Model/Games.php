@@ -11,7 +11,7 @@ class Games
         $this->img_icon_url = $image;
     }
 
-    private function printGame()
+    public function printGame()
     {
         $title = $this->name;
         $image = $this->img_icon_url;
