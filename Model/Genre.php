@@ -11,7 +11,7 @@ class Genre
 
     public function drawGenre()
     {
-        return "<span class='badge text-bg-primary'>$this->name</span>";
+        return "<span class='badge text-bg-secondary'>$this->name</span>";
     }
 
     public static function fetchAll()

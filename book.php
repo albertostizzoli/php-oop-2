@@ -9,7 +9,7 @@ include __DIR__ . '/Model/Book.php';
     <div class="row gy-4">
         <?php
         foreach ($books as $book) {
-            $book->printBook();
+            $book->printBook($book->formatBook());
         }
         ?>
     </div>

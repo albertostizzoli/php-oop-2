@@ -1,7 +1,9 @@
 <?php
 include __DIR__ ."/Product.php";
+include __DIR__ ."/../Traits/DrawGames.php";
 class Games extends Product
 {
+    use DrawGames;
     private string $name;
     private string $img_icon_url;
 
@@ -12,14 +14,25 @@ class Games extends Product
         $this->img_icon_url = $image;
     }
 
-    public function printGame()
+    public function formatGames()
+    {
+        $cardGames =[
+            'title' => $this->name,
+            'image' => $this->img_icon_url,
+            'quantity' => $this->quantity,
+            'price' => $this->price,
+        ];
+        return $cardGames;
+    }
+
+    /*public function printGame()
     {
         $title = $this->name;
         $image = $this->img_icon_url;
         $quantity = $this->quantity;
         $price = $this->price;
         include __DIR__ . '/../Views/play.php';
-    }
+    }*/
 }
 
 $gameString = file_get_contents(__DIR__ . "/steam_db.json");

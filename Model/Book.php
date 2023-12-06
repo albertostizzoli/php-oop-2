@@ -1,7 +1,9 @@
 <?php
 include __DIR__ ."/Product.php";
+include __DIR__ ."/../Traits/DrawBook.php";
 class Book extends Product
 {
+    use DrawBook;
     private int $_id;
     private string $title;
     private int $pageCount;
@@ -20,16 +22,18 @@ class Book extends Product
         $this->authors = $authors;
     }
 
-    public function printBook()
+    public function formatBook()
     {
-        $image = $this->thumbnailUrl;
-        $title = $this->title;
-        $pages = $this->pageCount;
-        $plot = substr($this->longDescription, 0, 100) . '...';
-        $authors = $this->authors;
-        $quantity = $this->quantity;
-        $price = $this->price;
-        include __DIR__ . '/../Views/read.php';
+        $cardBook = [
+             'image' => $this->thumbnailUrl,
+             'title'=> $this->title,
+             'pages' => $this->pageCount,
+             'plot' => substr($this->longDescription, 0, 100) . '...',
+             'authors' => $this->authors,
+             'quantity' => $this->quantity,
+             'price' => $this->price
+        ];
+       return $cardBook;
     }
 }
 
