@@ -1,7 +1,8 @@
 <?php
 include __DIR__ . "/Genre.php";
+include __DIR__ ."/Product.php";
 
-class Movie 
+class Movie extends Product
 {
     private int $id;
     private string $title;
@@ -10,8 +11,9 @@ class Movie
     private string $poster_path;
     private array $genres;
 
-    public function __construct($id, $title, $overview, $vote, $image, $genres)
+    public function __construct($id, $title, $overview, $vote, $image, $genres, $quantity, $price)
     {
+        parent::__construct($price, $quantity);
         $this->id = $id;
         $this->title = $title;
         $this->overview = $overview;
@@ -48,6 +50,8 @@ class Movie
         $content = substr($this->overview, 0, 100) . '...';
         $custom = $this->getVote();
         $genre = $this->formatGenres();
+        $quantity = $this->quantity;
+        $price = $this->price;
         include __DIR__ . '/../Views/card.php';
     }
 
@@ -65,6 +69,8 @@ class Movie
                 $rand_genre = $genres[$index];
                 $moviegenres[] = $rand_genre;
             }
+            $quantity = rand(0, 100);
+            $price = rand(15, 30);
             $movies[] = new Movie(
                 $item['id'],
                 $item['title'],
@@ -72,6 +78,8 @@ class Movie
                 $item['vote_average'],
                 $item['poster_path'],
                 $moviegenres,
+                $quantity,
+                $price
             );
         }
         return $movies;

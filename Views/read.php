@@ -14,6 +14,15 @@
             <div class="d-flex align-items-flex-start">
             <?= implode(', ', $authors) ?>
             </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <p><strong>AVAILABLE:</strong>
+                    <?= $quantity ?>
+                </p>
+                <p><strong>$</strong>
+                    <?= $price ?>
+                </p>
+            </div>
+            <button class="btn btn-primary">Buy Now!</button>
         </div>
     </div>
 </div>

@@ -1,12 +1,13 @@
 <?php
-
-class Games 
+include __DIR__ ."/Product.php";
+class Games extends Product
 {
     private string $name;
     private string $img_icon_url;
 
-    public function __construct($title, $image,)
+    public function __construct($title, $image, $quantity, $price)
     {
+        parent::__construct($price, $quantity);
         $this->name = $title;
         $this->img_icon_url = $image;
     }
@@ -15,6 +16,8 @@ class Games
     {
         $title = $this->name;
         $image = $this->img_icon_url;
+        $quantity = $this->quantity;
+        $price = $this->price;
         include __DIR__ . '/../Views/play.php';
     }
 }
@@ -24,6 +27,8 @@ $gameList = json_decode($gameString, true);
 
 $games = [];
 foreach ($gameList as $item) {
-    $games[] = new Games($item['name'], $item['img_icon_url']);
+    $quantity = rand(0, 100);
+    $price = rand(40, 80);
+    $games[] = new Games($item['name'], $item['img_icon_url'],$quantity, $price);
 }
 ?>
